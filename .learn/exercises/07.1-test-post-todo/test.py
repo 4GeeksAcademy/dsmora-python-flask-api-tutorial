@@ -97,5 +97,5 @@ def test_add_new_todo():
 
 @pytest.mark.it("The endpoint POST /todos should exist")
 def test_return(client):
-    response = client.post('/todos')
+    response = client.post('/todos', json={ "done": True, "label": "Sample Todo 2" })
     assert response.status_code in [200, 201]
